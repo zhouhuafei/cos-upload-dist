@@ -1,7 +1,7 @@
 {
-  "name": "npm-publish-ts",
+  "name": "cos-upload-dist",
   "version": "1.0.0",
-  "description": "npm-publish-ts",
+  "description": "cos-upload-dist",
   "main": "./dist/index.js",
   "files": [
     "dist"
@@ -25,15 +25,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zhouhuafei/npm-publish-ts.git"
+    "url": "git+https://github.com/zhouhuafei/cos-upload-dist.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zhouhuafei/npm-publish-ts/issues"
+    "url": "https://github.com/zhouhuafei/cos-upload-dist/issues"
   },
-  "homepage": "https://github.com/zhouhuafei/npm-publish-ts#readme",
+  "homepage": "https://github.com/zhouhuafei/cos-upload-dist#readme",
   "devDependencies": {
     "@babel/plugin-transform-typescript": "^7.16.8",
     "@babel/preset-env": "^7.16.11",
@@ -66,5 +66,8 @@
     "ttypescript": "^1.5.15",
     "typescript": "~4.5.5",
     "typescript-transform-paths": "^3.3.1"
+  },
+  "dependencies": {
+    "cos-nodejs-sdk-v5": "^2.14.7"
   }
 }
