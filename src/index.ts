@@ -30,7 +30,7 @@ export const fnUploadFiles = async (options: UploadConfig) => {
   entries.forEach(localFilePath => {
     // console.log('localFilePath：', localFilePath)
     const arr = localFilePath.split('/').filter(v => v !== '.' && v !== '..')
-    if (options.pathPrefix) arr[0] = options.pathPrefix
+    if (options.pathPrefix) arr.unshift(options.pathPrefix)
     let remoteFilePath = arr.join('/')
     if (options.remoteFilePathHandler) {
       remoteFilePath = options.remoteFilePathHandler(remoteFilePath) || remoteFilePath

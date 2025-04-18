@@ -30,7 +30,8 @@ fnUploadFiles({
   // 以 dist 目录中的 css/app.19a8a3b7.css 文件为例
   // 如果 pathPrefix 为 '' 则文件的存储路径为 dist/css/app.19a8a3b7.css
   // 如果 pathPrefix 为 'project1' 则文件的存储路径为 project1/dist/css/app.19a8a3b7.css
-  // 如果 pathPrefix 为 'project1/dist' 则文件的存储路径为 project1/dist/dist/css/app.19a8a3b7.css
-  pathPrefix: 'project1/dist'
+  // 如果 pathPrefix 为 'project1/test' 则文件的存储路径为 project1/test/dist/css/app.19a8a3b7.css
+  pathPrefix: 'project1/test',
+  remoteFilePathHandler: remoteFilePath => remoteFilePath
 })
 ```
