@@ -3,7 +3,8 @@ import COS from 'cos-nodejs-sdk-v5'
 
 interface UploadConfig {
   fastGlobConfig: [string[], fg.Options]
-  pathPrefix: string
+  pathPrefix: string,
+  remoteFilePathHandler?: (remoteFilePath: string) => string
 }
 
 let cos = null
@@ -30,7 +31,10 @@ export const fnUploadFiles = async (options: UploadConfig) => {
     // console.log('localFilePath：', localFilePath)
     const arr = localFilePath.split('/').filter(v => v !== '.' && v !== '..')
     if (options.pathPrefix) arr[0] = options.pathPrefix
-    const remoteFilePath = arr.join('/')
+    let remoteFilePath = arr.join('/')
+    if (options.remoteFilePathHandler) {
+      remoteFilePath = options.remoteFilePathHandler(remoteFilePath) || remoteFilePath
+    }
     // console.log('remoteFilePath：', remoteFilePath)
 
     cos.uploadFile({
