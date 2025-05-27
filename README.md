@@ -28,10 +28,10 @@ fnUploadFiles({
     { dot: true } // 使之支持上传dist目录中，以.开头的文件，例如.editorconfig文件。
   ],
   // 以 dist 目录中的 css/app.19a8a3b7.css 文件为例
-  // 如果 pathPrefix 为 '' 则文件的存储路径为 dist/css/app.19a8a3b7.css
-  // 如果 pathPrefix 为 'project1' 则文件的存储路径为 project1/dist/css/app.19a8a3b7.css
-  // 如果 pathPrefix 为 'project1/test' 则文件的存储路径为 project1/test/dist/css/app.19a8a3b7.css
-  pathPrefix: 'project1/test',
+  // 如果 pathPrefix 为 '' 则文件的存储路径为 css/app.19a8a3b7.css
+  // 如果 pathPrefix 为 'project1' 则文件的存储路径为 project1/css/app.19a8a3b7.css
+  // 如果 pathPrefix 为 'project1/dist' 则文件的存储路径为 project1/dist/css/app.19a8a3b7.css
+  pathPrefix: 'project1/dist',
   remoteFilePathHandler: remoteFilePath => remoteFilePath
 })
 ```
