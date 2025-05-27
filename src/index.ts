@@ -49,8 +49,10 @@ export const fnUploadFiles = async (options: UploadConfig) => {
       FilePath: localFilePath // 必须
     }, (error, data) => {
       if (error) {
-        console.log('上传失败：', localFilePath, '=>', remoteFilePath)
+        // console.log('error：', error)
+        console.log('上传失败：', localFilePath, '=>', remoteFilePath, error)
       } else {
+        // console.log('data：', data)
         console.log('上传成功：', localFilePath, '=>', remoteFilePath)
       }
     })
