@@ -25,11 +25,11 @@ export const fnInit = async (options) => {
 
 export const fnUploadFiles = async (options: UploadConfig) => {
   // console.log('fnUploadFiles options：', options)
+  const pathPrefix = options.pathPrefix || ''
   const entries = await fg(...options.fastGlobConfig)
 
   entries.forEach(localFilePath => {
     // console.log('localFilePath：', localFilePath)
-    const pathPrefix = options.pathPrefix || ''
     const arr = localFilePath.split('/').filter(v => v !== '.' && v !== '..')
     if (pathPrefix) {
       arr[0] = pathPrefix
